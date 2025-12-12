@@ -13,7 +13,7 @@ def load(data):
     return f"{data}"  # logs will NOT appear in Prefect Cloud
 
 @flow
-def etl_flow(job_name: str = "Default Job"):	qaq	1
+def etl_flow(job_name: str = "Default Job"):	
     raw = extract()
     processed = transform(raw)
     load(f"{job_name}: {processed}")
