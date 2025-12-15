@@ -20,6 +20,7 @@ def load(data):
 def etl_flow(job_name: str = "Daily ETL"):
     raw = extract()
 	processed = transform(raw)
+	load(f"{job_name}: {processed}")
     validated = validate(processed)
 	load(validated)
 
