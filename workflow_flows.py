@@ -1,10 +1,6 @@
 from prefect import flow, task
 
 @task
-	def validate(data):
-        return f"{data} → Validated"
-
-@task
 def extract():
     return "Data Extracted"
 
@@ -15,6 +11,10 @@ def transform(data):
 @task
 def load(data):
     return f"{data}"  # Logs will not show in Cloud
+
+@task
+	def validate(data):
+        return f"{data} → Validated"
 
 @flow
 def etl_flow(job_name: str = "Daily ETL"):
