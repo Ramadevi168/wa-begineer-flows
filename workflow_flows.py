@@ -1,6 +1,10 @@
 from prefect import flow, task
 
 @task
+	def validate(data):
+        return f"{data} → Validated"
+
+@task
 def extract():
     return "Data Extracted"
 
@@ -15,8 +19,10 @@ def load(data):
 @flow
 def etl_flow(job_name: str = "Daily ETL"):
     raw = extract()
-    processed = transform(raw)
-    load(f"{job_name}: {processed}")
+	processed = transform(raw)
+    validated = validate(processed)
+	load(validated)
+
 
 @flow
 def post_etl_flow():
