@@ -3,7 +3,7 @@ import time
 
 @task
 def wait_task():
-    time.sleep(10)
+    time.sleep
 
 @flow
 def wait_workflow():
