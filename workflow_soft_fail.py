@@ -14,4 +14,4 @@ def soft_fail_workflow():
         risky_task()
     except:
         pass
-    continue_task()
+    continue_task
