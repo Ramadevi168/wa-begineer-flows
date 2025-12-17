@@ -11,7 +11,7 @@ def continue_task():
 @flow
 def soft_fail_workflow():
     try:
-        risky_task()
+        
     except:
         pass
     continue_task
